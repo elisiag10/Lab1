@@ -1,25 +1,34 @@
-var hits = Math.floor(Math.random() * Math.floor(2)+1); 
+var question= prompt ("do you want to play?");
+
+var userHP = 40;
+var computerHP = 10;
+var wins = 0; 
+var hits= 0;
 
 
   if (question==="yes"){
   
- var userInput = prompt ("What is your name"); 
+  var userInput = prompt ("What is your name"); 
   
-  //var intro = alert("Welcome " + userInput + ". Your mission is to defeat the evil Chirpet. By the third defeat you or the Chirpet will be the last man standing. Are you ready let's begin. Good Luck!");
+  var intro = alert("Welcome " + userInput + ". Your mission is to defeat Grant. Are you ready let's begin. Good Luck!");
     
 
-while (wins <=  3 && defeats >=0 ){
-  if(userHP <=40 ){
-    grantHP = grantHP - hits;
+while (userHP > 0 && wins < 3){
+  userHP = userHP - Math.floor((Math.random() * 2) + 1); 
+  console.log (userInput + " is now at " +userHP);
+  computerHP = computerHP - Math.floor((Math.random() * 2) + 1);
+  console.log ("Grant is now at " + computerHP) ;
+  if (computerHP <= 0) {
     wins = wins + 1;
-    
+    computerHP = 10;
   }
-     if (computerHP <= 0 ){console.log ("you win"); }
 }
+  if (wins === 3){
+    console.log("You are a winner");
+  }
+  else{
+    console.log("Grant wins");
+  }
+
 
 }
-
-
-//function getRandomInt(max) {
-  //return Math.floor(Math.random() * Math.floor(max));
-//}
